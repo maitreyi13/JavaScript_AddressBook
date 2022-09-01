@@ -1,21 +1,28 @@
 console.log("***Welcome to Address Book***");
 
 class Contact{
+    firstName
+    lastName
+    address
+    state
+    city
+    zipCode
+    email
+    phoneNumber
+    
     //Using Rest paameters to add multiple arguments
     constructor(...contactDetails){
-        this.firstName = contactDetails[0];
-        this.lastName = contactDetails[1];
-        this.address = contactDetails[2];
-        this.city = contactDetails[3];
-        this.state = contactDetails[4];
-        this.zipCode = contactDetails[5];
-        this.phoneNumber = contactDetails[7];
-        this.email = contactDetails[6];
+        this.firstName;
+        this.lastName;
+        this.address;
+        this.city;
+        this.state;
+        this.zipCode;
+        this.phoneNumber;
+        this.email
     }
 }
-/**
- * AddressBook Array
- */
+
  var addressBook = new Array();
 
  /**
