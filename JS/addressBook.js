@@ -137,3 +137,12 @@ function editContact(findName,editedVariable,variableNewValue){
         }
     }
 }
+/**
+ * method to Count Total Number Of Contact 
+ */
+ function countContact(){
+    addressBook.reduce(() => {
+        count++;
+    },count = 0);
+    console.log("\nTotal Contacts in Address Book are: "+count + "\n");
+}
