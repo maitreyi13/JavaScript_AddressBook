@@ -88,7 +88,7 @@ class Contact{
  */
 function editContact(findName,editedVariable,variableNewValue){
     if(addressBook.length == null){
-        console.log("Add Contact In Address Book");
+        console.log("Add contact in Address Book");
     }else{
         addressBook.forEach(newContact => {
             if(newContact.firstName == findName){
@@ -120,5 +120,20 @@ function editContact(findName,editedVariable,variableNewValue){
                 }
             }
         })
+    }
+}
+/**
+ * method to Delete the Contact From Address Book
+ */
+ function deleteContact(first_Name){
+    if(addressBook.length == null){
+        console.log("Please add a contact in Address Book");
+    }else{
+        for(let i = 0; i <addressBook.length ; i++){
+            if(addressBook[i].firstName == first_Name){
+                addressBook.splice(i,1);
+                console.log("Contact Deleted Successfully");
+            }
+        }
     }
 }
