@@ -165,3 +165,19 @@ function editContact(findName,editedVariable,variableNewValue){
         console.log("Invalid city city or state");
     }
 }
+/**
+ * method created to View Contact
+ */
+ function viewByCityOrState(choice , name){
+    if(choice == "city"){
+        person = addressBook.filter(contact => contact.city == name)
+        console.log("Contact found from city:"+name);
+        console.log(person);
+    }else if(choice == "state"){
+        person = addressBook.filter(contact => contact.state == name)
+        console.log("Contact found from state:"+name);
+        console.log(person);
+    }else{
+        console.log("Invalid city city or state");
+    }
+}
