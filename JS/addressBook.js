@@ -197,3 +197,98 @@ function editContact(findName,editedVariable,variableNewValue){
         console.log("Invalid city city or state");
     }
 }
+function sortContact(choice){
+    console.log(addressBook.sort((newContact1,newContact2) => {
+        switch(choice){
+            case "firstName":
+                one = newContact1.firstName;
+                two = newContact2.firstName;
+                break;
+            default:
+                console.log("Invalid choice")
+        }
+   
+        if(one < two){
+            return -1;
+        }else if(one == two){
+            return 0;
+        }else{
+            return 1;
+        }
+    }));
+}
+
+function selectFunction(select){
+    switch(select){
+        case "contactDetails":
+
+                /**
+                 * Calling Contact Details Fucntion
+                 */
+                contactDetails("Maitreyi","Kulkarni","Kothrud","Pune","Maharashtra","411005","maitreyikulkarni@gmail.com","91 9875462130");
+                contactDetails("Ashwini","Pandit","Happy Colony","Pune","Maharashtra","411002","ashupandit@gmail.com","91 9998887772");
+                
+                /**
+                 add contact for duplicate entry
+                */
+                contactDetails("Maitreyi","Kulkarni","Kothrud","Pune","Maharashtra","411005","maitreyikulkarni@gmail.com","91 9875462130");               
+                
+                contactDetails("Tina","Gupta","Pune","Maharashtra","Pune","432 412","tina@gmail.com","91 9998887773");
+                
+                console.log(addressBook);
+                break;
+        case "editContact":
+                /**
+                Calling Edit Contact Function
+                */
+                editContact("Maitreyi","city","Pune");
+                console.log(addressBook);
+                break;
+        case "deleteContact":
+                /*
+                Calling Delete Contact Function
+                */
+                deleteContact("Tina");
+                console.log(addressBook);
+                break;
+        case "countContact":
+                countContact();
+                break;
+        case "searchByCity_State":
+                /*
+                Calling Search Function To Search Contact in Address Book
+                */
+                searchByCity_State("state","Maharashtra");
+                break;
+        case "viewByCityOrState":
+                /*
+                Calling View By State or City Function
+                */
+                viewByCityOrState("state","Maharashtra");
+                break;
+        case "countContactInCity_State":
+                /*
+                Calling Count by City And State Function
+                */
+                countContactInCity_State("state","Maharashtra");
+                countContactInCity_State("city","Pune");
+                break;
+        case "sortContact":
+                /*
+                Calling Sort Function
+                */
+                sortContact("firstName");
+                break;
+    }
+}
+
+
+selectFunction("contactDetails");
+selectFunction("countContact");
+selectFunction("searchByCity_State");
+selectFunction("editContact");
+selectFunction("deleteContact");
+selectFunction("countContact");
+selectFunction("searchByCity_State");
+selectFunction("viewByCityOrState");
+selectFunction("countContactInCity_State");
