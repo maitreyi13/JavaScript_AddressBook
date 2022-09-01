@@ -146,3 +146,22 @@ function editContact(findName,editedVariable,variableNewValue){
     },count = 0);
     console.log("\nTotal Contacts in Address Book are: "+count + "\n");
 }
+
+/**
+ * method to Search Contact 
+ */
+ function searchByCity_State(choice , name){
+    if(choice == "city"){
+        person = addressBook.filter(contact => contact.city == name)
+        .map(contact => contact.firstName);
+        console.log("Contact found in city: "+name);
+        console.log(person);
+    }else if(choice == "state"){
+        person = addressBook.filter(contact => contact.state == name)
+        .map(contact => contact.firstName);
+        console.log("Contact found from state:  "+name);
+        console.log(person);
+    }else{
+        console.log("Invalid city city or state");
+    }
+}
