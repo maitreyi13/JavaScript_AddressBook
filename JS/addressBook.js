@@ -204,6 +204,18 @@ function sortContact(choice){
                 one = newContact1.firstName;
                 two = newContact2.firstName;
                 break;
+            case "city":
+                one = newContact1.city;
+                two = newContact2.city;
+                break;
+            case  "state":
+                one = newContact1.state;
+                two = newContact2.state;
+                break;
+            case "zipCode":
+                one = newContact1.zipCode;
+                two = newContact2.zipCode;
+                break;
             default:
                 console.log("Invalid choice")
         }
@@ -292,3 +304,4 @@ selectFunction("countContact");
 selectFunction("searchByCity_State");
 selectFunction("viewByCityOrState");
 selectFunction("countContactInCity_State");
+selectFunction("sortContact");
