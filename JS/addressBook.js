@@ -181,3 +181,19 @@ function editContact(findName,editedVariable,variableNewValue){
         console.log("Invalid city city or state");
     }
 }
+/**
+ * method created to Count Contact From Perticuler City Or State
+ */
+ function countContactInCity_State(choice , name){
+    if(choice == "city"){
+        person = addressBook.filter(contact => contact.city == name)
+        .reduce(() => { count++;},count = 0);
+        console.log("Total contacts in city "+name+" are " +count);
+    }else if(choice == "state"){
+        person = addressBook.filter(contact => contact.state == name)
+        .reduce(() => { count++;},count = 0);
+        console.log("Total contacts in state "+name+" are " +count);
+    }else{
+        console.log("Invalid city city or state");
+    }
+}
